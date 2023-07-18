@@ -20,4 +20,10 @@ GIVEN o usuário “Ana” está na página de “Reviews”
 AND o usuário “Ana” quer achar a review de uma música “Cruel Summer” do género POP
 WHEN o usuário “Ana” clica no “filtro” de busca
 AND o usuário “Ana” escolhe o gênero POP na categoria de “Gêneros” no filtro
-THEN é exibida uma lista de resultados onde ela visualiza a música de título " “Cruel Summer" desejada e todas as outras com mesmo nome
+THEN é exibida uma lista de resultados onde ela visualiza a música de título "Cruel Summer"
+
+Scenario: Busca por artista 
+GIVEN o usuário “Ana” está na página de “Reviews”
+AND o usuário “Ana” quer achar a review da música  “Cruel Summer”  da “Taylor Swift”
+WHEN o usuário “Ana” insere o nome da Taylor Swift em “buscar”
+THEN é exibida uma lista de resultados, exibindo as músicas e álbuns da “Taylor Swift”
