@@ -3,6 +3,7 @@ from uuid import uuid4
 from pymongo import MongoClient, errors
 from pymongo.collection import Collection, IndexModel
 from src.config.config import env
+from typing import Dict
 
 from logging import INFO, WARNING, getLogger
 from bson.objectid import ObjectId
@@ -325,3 +326,26 @@ class Database():
             A list of all items in the collection.
 
         """
+
+    def get_available_on_for_song(self, song_id: str) -> Dict[str, str]:
+        """
+        Retrieve music links for a song
+
+        Parameters:
+        - song_id: str
+            The ID of the song for which to retrieve the music links
+
+        Returns:
+        - dict:
+            A dictionary containing music links for the song
+
+        """
+
+        # Simulate fetching music links for the song
+        # Replace these with your actual logic to fetch the links from the database
+        song_links = {
+            "Spotify": f"https://spotify.com/song/{song_id}",
+            "Apple Music": f"https://apple.com/song/{song_id}",
+        }
+
+        return song_links
