@@ -1,5 +1,5 @@
 from fastapi import APIRouter, status, HTTPException
-from src.schemas.music import MusicGet, MusicModel, MusicDelete
+from src.schemas.music import MusicGet, MusicModel, MusicDelete, MusicList
 from starlette.responses import JSONResponse
 
 from src.service.impl.music_service import MusicService
@@ -43,6 +43,23 @@ def add_song(song: SongCreateModel):
 
     return song_add_response
 
+@router.get(
+    "/songs",
+    response_model=MusicList,
+    response_class=JSONResponse,
+    summary="get all songs",
+)
+def get_songs():
+    songs_get_response = MusicService.get_songs()
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print(songs_get_response)
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    return {
+        "musics": songs_get_response
+    }
+
+
+
 @router.delete(
     "/song/{song_id}",
     response_model=MusicDelete,
@@ -53,6 +70,17 @@ def delete_song(song_id: str):
     song_delete_response = MusicService.delete_song(song_id)
     return song_delete_response
 
+@router.get(
+    "/higlighted",
+    response_model=MusicList,
+    response_class=JSONResponse,
+    summary="get highlighted songs",
+)
+def get_highlighted():
+    highlighted_response = MusicService.get_highlighted()
+    return {
+        "musics": highlighted_response
+    }
 
 # Edit a song's genre
 # @router.put(

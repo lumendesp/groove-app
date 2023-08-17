@@ -8,17 +8,22 @@ class MusicModel(BaseModel):
     genre: str
     artist: str
     release_year: int
+    popularity: int
 
 class MusicGet(BaseModel):
-    name: str
+    title: str
     genre: str
     artist: str
+    release_year: int
+    popularity: int
+    id : str
 
 class SongCreateModel(BaseModel):
     title: str
     artist: str
     genre: str
     release_year: int
+    popularity: int
 
 class MusicList(BaseModel):
     musics: list[MusicGet]
