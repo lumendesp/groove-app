@@ -35,6 +35,7 @@ const AlbumForm: React.FC<{
                 'spotify_link': linkSpotify,
                 'apple_music_link': linkApple,
             },
+            'popularity': 0,
         };
 
         console.log(formData);

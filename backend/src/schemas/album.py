@@ -12,6 +12,7 @@ class AlbumModel(BaseModel):
     # image_url: Optional[str] = ''
     available_on: Optional[object] = {}
     genre: Optional[str] = ''
+    popularity: Optional[int] = 0
 
 
 class AlbumGet(BaseModel):
@@ -23,6 +24,7 @@ class AlbumGet(BaseModel):
     # image_url: Optional[str] = ''
     available_on: Optional[object] = {}
     genre: Optional[str] = ''
+    popularity: Optional[int] = 0
 
 
 class AlbumCreateModel(BaseModel):
@@ -34,6 +36,7 @@ class AlbumCreateModel(BaseModel):
     # image_url: Optional[str] = ''
     available_on: Optional[object] = {}
     genre: Optional[str] = ''
+    popularity: Optional[int] = 0
 
 
 class AlbumList(BaseModel):

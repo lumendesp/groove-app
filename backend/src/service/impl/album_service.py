@@ -18,6 +18,10 @@ class AlbumService:
 
     @staticmethod
     def add_album(album: AlbumCreateModel):
+        print('----------------')
+
+        print(album)
+        print('----------------')
         added_album = db.add('albums', album)
         return added_album
 

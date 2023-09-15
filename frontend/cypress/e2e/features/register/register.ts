@@ -51,13 +51,13 @@ When('o usuário preenche os campos: "Título do Álbum" com "Cyberpunk 2077: Ra
 // Scenario: Criar uma Review
 //Given: common-step-definitions.ts
 
-When('o usuário preenche os campos: "Título da Review" com "Amazing Album", "Descrição" com "This album blew my mind with its brilliant tracks and vocals.", "Avaliação" com "5", "Autor da Review" com "John Doe", "Música Relacionada" com "Cyberpunk 2077: Radio, Vol 2"', () => {
+When('o usuário preenche os campos: "Título da Review" com "Álbum incrível", "Descrição" com "AMEI", "Avaliação" com "5", "Autor da Review" com "John Doe", "Música Relacionada" com "Cyberpunk 2077: Radio, Vol 2"', () => {
   const fields = {
-      "title": "Amazing Album",
-      "description": "This album blew my mind with its brilliant tracks and vocals.",
+      "title": "Álbum incrível",
+      "description": "AMEI",
       "rating": "5",
       "author": "John Doe",
-      "song": "6501f072fb0937ffe36a9fd7"
+      "song": "65030855acec9f7513d8c664"
   };
 
   for (const [field, value] of Object.entries(fields)) {

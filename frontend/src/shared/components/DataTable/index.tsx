@@ -60,7 +60,8 @@ const DataTable: React.FC<DataTableProps> = ({contentType}) => {
       confirmButtonColor: 'secondary',
       cancelButtonColor: '#d33',
       cancelButtonText:'Cancelar',
-      confirmButtonText: 'Sim, deletar!'
+      confirmButtonText: 'Sim, deletar!',
+      
     }).then((result) => {
       if (result.isConfirmed) {
         
@@ -150,7 +151,7 @@ const DataTable: React.FC<DataTableProps> = ({contentType}) => {
             </TableRow>
           ) : (
           data.map((row) => (
-            <TableRow key={row.id}>
+            <TableRow key={row.id} data-cy={row.id}>
               <TableCell align="center">
                 <img
                   src={row.cover}
@@ -173,6 +174,7 @@ const DataTable: React.FC<DataTableProps> = ({contentType}) => {
                 <IconButton 
                     color="secondary" 
                     onClick={() => handleDelete(row.id)}
+                    data-cy={`delete_${row.id}`}
                 >
                     <DeleteIcon />
                 </IconButton>

@@ -18,8 +18,8 @@ const CardWrapper = styled.div`
   flex-direction: column;
   padding: 16px;
   row-gap: 16px;
-  max-width: 600x;
-  max-lenght: 1000px;
+  max-width: 1000px;
+  word-wrap: break-word;
 `;
 
 const ReviewTitle = styled.div`

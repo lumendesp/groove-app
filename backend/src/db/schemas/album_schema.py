@@ -1,5 +1,6 @@
 from src.db.schemas.model_schema import ModelSchema
 
+
 class AlbumSchema(ModelSchema):
     bson_type: str = "object"
     required: list = ["id", "title", "artist", "release_year"]
@@ -20,6 +21,7 @@ class AlbumSchema(ModelSchema):
             "bson_type": "integer",
             "description": "The release year of the album"
         },
+        "popularity": {"bson_type": "integer", "description": "The album's popularity"},
         # "created_at": {
         #     "bson_type": "string",
         #     "description": "The album's creation time"

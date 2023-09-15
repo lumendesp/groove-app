@@ -11,11 +11,20 @@ class ReviewService:
         """Create item method implementation"""
         song_id = review.song
         song = db.get_item_by_id('songs', song_id)
-
+        album = db.get_item_by_id('albums', song_id)
         if song:
             song['popularity'] += 1
             review = db.add('reviews', review)
             song = db.edit('songs', song['_id'], song)
+        elif album:
+            print('------------')
+            print(album)
+            print('------------')
+            if album.get('popularity') is None:
+                album['popularity'] = 0
+            album['popularity'] += 1
+            review = db.add('reviews', review)
+            album = db.edit('albums', album['_id'], album)
         else:
             raise HTTPException(status_code=404, detail="Item not found")
 

@@ -171,7 +171,8 @@ class Database:
         collection: Collection = self.db[collection_name]
 
         item = collection.find_one({"_id": ObjectId(item_id)})
-        item["id"] = str(item["_id"])
+        if item is not None:
+            item["id"] = str(item["_id"])
 
         print(item)
         return item

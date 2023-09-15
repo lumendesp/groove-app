@@ -28,7 +28,7 @@ const CardWrapper = styled.div`
   gap: 16px;
   grid-template-columns: auto 1fr 1fr;
   padding: 16px;
-  max-width: 1250px;
+  max-width: 1000px;
 `;
 
 const SongCover = styled.img`

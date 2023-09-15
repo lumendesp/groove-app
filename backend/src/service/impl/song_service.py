@@ -17,6 +17,10 @@ class SongService:
     @staticmethod
     def get_songs():
         songs = db.get_all_items("songs")
+        # db.drop_collection("songs")
+        # db.drop_collection("ablums")
+        # db.drop_collection("reviews")
+
         return songs
 
     @staticmethod

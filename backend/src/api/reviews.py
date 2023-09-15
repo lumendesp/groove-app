@@ -13,17 +13,25 @@ router = APIRouter()
 
 @router.get(
     "/",
-    response_model=ReviewList,
+    response_model=dict,
     response_class=JSONResponse
 )
 def get_reviews():
     review_list_response = ReviewService.get_reviews()
     print('-------------------------------')
-
+    for review in review_list_response:
+        review['id'] = str(review['_id'])
+        del review['_id']
     print(review_list_response)
     print('-------------------------------')
     for review in review_list_response:
         song = SongService.get_song(review['song'])
+        if song is None:
+            continue
+        # song['cover'] = song['image_url']
+        print('***************************')
+        print(song)
+        print('***************************')
         review['songCover'] = song['cover']
         review['songTitle'] = song['title']
         review['artistName'] = song['artist']

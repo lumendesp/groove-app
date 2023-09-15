@@ -52,6 +52,7 @@ def get_song(song_id: str):
 )
 def get_songs():
     songs = SongService.get_songs()
+
     return {
         "songs": songs,
     }
@@ -79,6 +80,7 @@ def edit_song(song_id: str, song: SongCreateModel):
     summary="create a song",
 )
 def add_song(song: SongCreate):
+
     song_add_response = SongService.add_song(song)
 
     return song_add_response
@@ -190,6 +192,8 @@ def get_top_rated_songs(limit: int = 5):
     for song in songs:
 
         real_data_songs = SongService.get_song(song['song'])
+        if real_data_songs is None:
+            continue
         song['title'] = real_data_songs['title']
         song['artist'] = real_data_songs['artist']
         song['cover'] = real_data_songs['cover']
