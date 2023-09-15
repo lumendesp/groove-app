@@ -85,7 +85,7 @@ const InHigh: React.FC = () => {
             image={music.cover}
             id={music.id}
             data_cy={music.title}
-            dataa_cy={music.image_url}
+            data2_cy={music.cover}
           />
         ))}
       </MusicListContainer>
