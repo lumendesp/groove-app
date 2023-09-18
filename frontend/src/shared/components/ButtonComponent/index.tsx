@@ -1,5 +1,6 @@
 import React from "react";
 import { ButtonWrapper } from "./style";
+import { string } from "yargs";
 
 interface ButtonProps {
   primary?: boolean;
@@ -8,6 +9,7 @@ interface ButtonProps {
   onClick?: () => void;
   isActive?: boolean;
   data_cy?: string;
+  data_cy3?: string;
 }
 
 const ButtonComponent: React.FC<ButtonProps> = ({
@@ -17,6 +19,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   onClick,
   isActive,
   data_cy,
+  data_cy3,
 }) => {
   return (
     <ButtonWrapper
@@ -26,6 +29,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
       }}
       onClick={onClick}
       data-cy={data_cy}
+      data-cy3={data_cy3}
     >
       {children}
     </ButtonWrapper>

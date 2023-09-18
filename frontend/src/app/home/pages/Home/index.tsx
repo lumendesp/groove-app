@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { Wallpaper } from './style';
-import styled from 'styled-components';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import ReviewCard from '../../components/ReviewCard/ReviewCard';
-import axios from 'axios';
+import React, { useEffect } from "react";
+import { Wallpaper } from "./style";
+import styled from "styled-components";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import ReviewCard from "../../components/ReviewCard/ReviewCard";
+import axios from "axios";
 interface Review {
   id: number;
   title: string;
@@ -29,19 +29,17 @@ const Home: React.FC = () => {
   const [data, setData] = React.useState([]);
 
   const fetchData = async () => {
-
     try {
-        const response = await axios.get('http://127.0.0.1:8000/reviews/', {
-        });
-        
-        const data = response.data.reviews;
-        console.log('---------------');
-        console.log(data);
-        console.log('---------------');
-        setData(data);
+      const response = await axios.get("http://127.0.0.1:8000/reviews/", {});
+
+      const data = response.data.reviews;
+      console.log("---------------");
+      console.log(data);
+      console.log("---------------");
+      setData(data);
       // setSearchResults(data);
     } catch (error) {
-      console.error('Erro ao buscar dados:', error);
+      console.error("Erro ao buscar dados:", error);
     }
   };
   useEffect(() => {
@@ -61,6 +59,8 @@ const Home: React.FC = () => {
             content={review.description}
             authorName="Breno"
             authorUsername="breninho"
+            title_data_cy={review.title}
+            content_data_cy={review.description}
           />
         ))}
       </TableDiv>

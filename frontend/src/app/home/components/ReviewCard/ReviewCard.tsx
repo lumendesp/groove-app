@@ -11,6 +11,8 @@ export type ReviewCardProps = {
   content: string;
   authorName: string;
   authorUsername: string;
+  title_data_cy?: string;
+  content_data_cy?: string;
 };
 
 const CardWrapper = styled.div`
@@ -95,9 +97,9 @@ const ReviewCard = (props: ReviewCardProps) => {
         </div>
       </SongHeader>
 
-      <ReviewTitle>{props.title}</ReviewTitle>
+      <ReviewTitle data-cy={props.title_data_cy}>{props.title}</ReviewTitle>
 
-      <div>{props.content}</div>
+      <div data-cy={props.content_data_cy}>{props.content}</div>
 
       <AuthorInfo>
         <AuthorImage
