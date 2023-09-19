@@ -104,7 +104,10 @@ const MusicDetail: React.FC<{
                 appleMusicLink={data.available_on.apple_music_link}
                 deezerLink={data.available_on.deezer_link}
                 youtubeLink={data.available_on.youtube_link}
-          
+                spotify_link_data_cy={data.available_on.spotify_link}
+                apple_music_link_data_cy={data.available_on.apple_music_link}
+                deezer_link_data_cy={data.available_on.deezer_link}
+                youtube_link_data_cy={data.available_on.youtube_link}
               />
               {reviews.length > 0 ? (
                 <div className="reviews-container">

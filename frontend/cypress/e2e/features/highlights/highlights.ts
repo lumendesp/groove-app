@@ -14,11 +14,3 @@ Then(
     cy.getDataCy(musicTitle).should("contain", musicTitle);
   }
 );
-
-// Scenario: Visualizar tests
-//Given: common-step-definitions.ts
-
-When("o usuário clica na imagem {string}", (button: string) => {
-    cy.getDataCy(button).click();
-    }
-);

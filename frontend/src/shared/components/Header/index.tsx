@@ -121,7 +121,7 @@ const Header: React.FC = () => {
             </Link>
           </ButtonsDiv>
 
-          <Link to="/edition">
+          <Link to="/edition" style={{ textDecoration: "none" }}>
             <ButtonComponent
               customStyle={customButtonUser}
               isActive={activeButton === "User"}

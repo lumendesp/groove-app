@@ -23,7 +23,6 @@ const CardWrapper = styled.div`
   flex-direction: column;
   padding: 16px;
   row-gap: 16px;
-  max-width: 900px;
   word-wrap: break-word;
 `;
 
